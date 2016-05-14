@@ -1,0 +1,17 @@
+fname = raw_input("Enter file name: ")
+fh = open(fname)
+bh = list()
+ch = list()
+bh = fh.read()
+bh = bh.split()
+bh.sort()
+for i in range(0, len(bh)):
+    if i == ( len(bh) - 1 ) :
+        ch.append(bh[i])
+        break
+    elif bh[i+1] != bh[i]:
+        ch.append(bh[i])
+        continue
+    else:
+        continue
+print ch
