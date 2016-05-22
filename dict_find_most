@@ -1,0 +1,45 @@
+name = raw_input("Enter file:")
+if len(name) < 1 : name = "mbox-short.txt"
+handle = open(name)
+
+count = 0
+
+bh = ""
+eh = ""
+ch = dict()
+dh = dict()
+
+for line in handle :
+    line = line.rstrip()
+    if line == "" : continue    
+    bh = line.split()
+    if bh[0] == "From:" : continue        
+    elif bh[0] != "From" : continue       
+    count = count +1
+    ch[bh [1] ] = 1
+    for 
+    
+    
+    
+print ch
+
+for i in ch:
+    if ch[i] != ch[i+1]:
+        ch[i] = 1:
+        
+
+"""
+for word in ch:
+    dh[word] = dh.get(word,0)+1
+
+print dh
+
+    bh [1] = eh
+    
+    if eh in ch:
+        ch [bh [1]] = ch [bh [1]] + 1
+
+         
+    #ch[bh[1]] = count     
+    print ch
+"""
