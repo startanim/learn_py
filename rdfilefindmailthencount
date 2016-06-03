@@ -1,0 +1,105 @@
+name = raw_input("Enter file:")
+if len(name) < 1 : name = "mbox-short.txt"
+handle = open(name)
+
+count = 0
+countb = 0
+
+bh = ""
+eh = ""
+#ch = dict()
+ch=[]
+dh = dict()
+
+for line in handle :
+    line = line.rstrip()
+    if line == "" : continue    
+    bh = line.split()
+    if bh[0] == "From:" : continue        
+    elif bh[0] != "From" : continue       
+    count = count +1
+    #ch[count] = bh [1] 
+    ch.append(bh[1])
+
+for i in ch:
+    if i in dh: 
+        dh[i] += 1
+    else: 
+        dh[i] = 1
+
+        
+for word in dh.keys():
+    if dh[word]> countb:
+        countb = dh [word]
+        eh = word
+        
+print eh , countb
+
+
+
+
+
+
+
+"""
+print "the key name is" + key + "and its value is" + mydic[key]
+
+
+print countb       
+        
+for key in mydic.keys():
+  print "the key name is" + key + "and its value is" + mydic[key]
+"""    
+#print dh
+
+"""   
+    
+for i in ch:
+    if i !=eh:
+        dh[count] = bh [1] 
+        eh = i
+        print eh + " " + str(countb)
+    elif i==eh:
+        countb +=1
+        print eh + " " + str(countb)    
+"""
+#print ch , len(ch)
+
+"""
+for i in ch.values():
+    if i !=eh:
+        eh = i
+        print eh + " " + str(countb)
+    elif i==eh:
+        countb +=1
+        print eh + " " + str(countb)
+        
+"""        
+
+        
+  
+#print ch.values()
+#    print i 
+"""
+ct = 0
+for l in ch.values():
+   for i in l:
+        ct += 1
+        print ch
+        
+"""
+"""
+for word in ch:
+    dh[word] = dh.get(word,0)+1
+
+print dh
+
+    bh [1] = eh
+    
+    if eh in ch:
+        ch [bh [1]] = ch [bh [1]] + 1
+
+         
+    #ch[bh[1]] = count     
+    print ch
+"""
