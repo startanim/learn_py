@@ -1,0 +1,37 @@
+name = raw_input("Enter file:")
+if len(name) < 1 : name = "mbox-short.txt"
+handle = open(name)
+
+count = 0
+countb = 0
+
+bh = ""
+eh = ""
+fh = ""
+#ch = dict()
+ch=[]
+dh = dict()
+gh =()
+
+for line in handle :
+    line = line.rstrip()
+    if line == "" : continue    
+    bh = line.split()
+    if bh[0] == "From:" : continue        
+    elif bh[0] != "From" : continue       
+    count = count +1
+    eh = bh[5].split(":")
+    ch.append(eh[0])    
+    
+
+for i in ch:
+    if i in dh: 
+        dh[i] += 1
+    else: 
+        dh[i] = 1
+        
+gh = dh.items()
+gh = sorted(gh)
+
+for k,v in gh:
+    print k,v
