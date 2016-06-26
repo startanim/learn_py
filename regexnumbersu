@@ -1,0 +1,16 @@
+import re
+
+fh = open("regex_sum_269275.txt")
+ct = 0
+bh = ""
+num = list()
+
+for line in fh:
+    line = line.rstrip()
+    bh = re.findall('[0-9]+',line)
+    for i in bh:
+        ct += int(i)
+    if len (bh)!= 0 :
+        num.append (bh)
+print ct
+ #print num
