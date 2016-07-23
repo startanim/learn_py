@@ -1,0 +1,25 @@
+import urllib
+import json
+
+cnt = 0
+sm = 0
+bt = ()
+while True:
+    url = raw_input('Enter URL: ')
+    if len(url) < 1 : break
+    print 'Retrieving', url
+    html = urllib.urlopen(url).read()
+    print 'Retrieved',len(html),'characters'
+    info = json.loads(html)
+
+    for key, value in info.items():
+        bt = value
+
+    for item in bt:
+        number = item['count']
+        #print number
+        sm += int(number)
+        cnt = cnt + 1
+
+print "Count:", cnt
+print "Sum:", sm
